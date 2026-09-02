@@ -770,6 +770,14 @@ class DatabaseService {
     return this.getItem('bungalows', INITIAL_BUNGALOWS);
   }
 
+  saveBungalow(bungalow: Bungalow): void {
+    const bungalows = this.getBungalows();
+    const index = bungalows.findIndex(item => item.id === bungalow.id);
+    if (index >= 0) bungalows[index] = bungalow;
+    else bungalows.push(bungalow);
+    this.setItem('bungalows', bungalows);
+  }
+
   getBookings(): BungalowBooking[] {
     return this.getItem('bookings', INITIAL_BOOKINGS);
   }
