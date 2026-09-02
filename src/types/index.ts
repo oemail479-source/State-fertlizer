@@ -262,6 +262,20 @@ export interface VacancyItem {
   status: 'Active' | 'Closed';
 }
 
+export interface JobApplication {
+  id: string;
+  vacancyId: string;
+  positionTitle: string;
+  applicantName: string;
+  nic: string;
+  email: string;
+  mobile: string;
+  qualifications: string;
+  experienceYears: number;
+  status: 'Received' | 'Under Review' | 'Shortlisted' | 'Rejected';
+  appliedAt: string;
+}
+
 export interface GalleryItem {
   id: string;
   title: string;
@@ -270,6 +284,45 @@ export interface GalleryItem {
   url: string;
   thumbnail: string;
   date: string;
+  videoDuration?: string;
+}
+
+export interface MinisterMessage {
+  ministerName: string;
+  title: string;
+  ministry: string;
+  photo: string;
+  quote: string;
+  messageBody: string[];
+}
+
+export interface BoardMember {
+  id: string;
+  name: string;
+  designation: string;
+  department: string;
+  photo: string;
+  bio: string;
+  qualifications: string;
+  type: 'board' | 'executive';
+}
+
+export interface AnnualReport {
+  id: string;
+  year: string;
+  title: string;
+  summary: string;
+  fileSize: string;
+  pdfUrl: string;
+  highlights: string[];
+}
+
+export interface VisitorAnalytics {
+  liveOnline: number;
+  todayVisits: number;
+  totalVisitors: number;
+  pageViews: number;
+  lastUpdated: string;
 }
 
 export interface AuditLog {
@@ -293,3 +346,4 @@ export interface ERPSyncLog {
   syncedAt: string;
   retryCount: number;
 }
+

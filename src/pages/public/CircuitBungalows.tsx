@@ -14,6 +14,8 @@ export const CircuitBungalows: React.FC = () => {
 
   const [selectedBungalowId, setSelectedBungalowId] = useState<string>(bungalows[0].id);
   const [selectedRoom, setSelectedRoom] = useState<BungalowRoom | null>(null);
+  const [calendarRoomId, setCalendarRoomId] = useState<string>('');
+  const [calendarMonth, setCalendarMonth] = useState('2026-09');
 
   // Booking Form State
   const [checkInDate, setCheckInDate] = useState('2026-09-15');
@@ -32,6 +34,10 @@ export const CircuitBungalows: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const activeBungalow = bungalows.find(b => b.id === selectedBungalowId) || bungalows[0];
+  const calendarRoom = activeBungalow.rooms.find(room => room.id === calendarRoomId) || activeBungalow.rooms[0];
+  const calendarDays = Array.from({ length: new Date(Number(calendarMonth.slice(0, 4)), Number(calendarMonth.slice(5, 7)), 0).getDate() }, (_, index) => `${calendarMonth}-${String(index + 1).padStart(2, '0')}`);
+  const bookings = db.getBookings();
+  const isBooked = (date: string) => bookings.some(booking => booking.roomId === calendarRoom?.id && booking.status !== 'Rejected' && booking.status !== 'Cancelled' && date >= booking.checkInDate && date < booking.checkOutDate);
 
   // Calculate nights
   const calculateNights = () => {
@@ -249,6 +255,11 @@ export const CircuitBungalows: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <section className="bg-white rounded-2xl border p-6 space-y-4">
+        <div className="flex flex-col sm:flex-row justify-between gap-3"><div><h3 className="text-xl font-bold text-gov-navy">Monthly Room Availability</h3><p className="text-xs text-slate-500">Select a green date to use it as your check-in date.</p></div><div className="flex gap-2"><select value={calendarRoom?.id} onChange={e => setCalendarRoomId(e.target.value)} className="p-2 border rounded-lg text-xs">{activeBungalow.rooms.map(room => <option key={room.id} value={room.id}>{room.roomNumber} - {room.roomName}</option>)}</select><input type="month" value={calendarMonth} onChange={e => setCalendarMonth(e.target.value)} className="p-2 border rounded-lg text-xs" /></div></div>
+        <div className="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-500">{['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => <span key={day} className="p-2">{day}</span>)}{Array.from({ length: new Date(`${calendarMonth}-01`).getDay() }).map((_, index) => <span key={`empty-${index}`} />)}{calendarDays.map(date => <button key={date} type="button" disabled={!calendarRoom || calendarRoom.status !== 'Available' || isBooked(date)} onClick={() => { setCheckInDate(date); const next = new Date(`${date}T00:00:00`); next.setDate(next.getDate() + 1); setCheckOutDate(next.toISOString().slice(0, 10)); setSelectedRoom(calendarRoom); }} className={`p-2 rounded-lg font-bold ${isBooked(date) ? 'bg-rose-100 text-rose-700 cursor-not-allowed' : calendarRoom?.status !== 'Available' ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-200'}`}>{Number(date.slice(-2))}</button>)}</div><div className="flex gap-4 text-[10px] font-bold"><span className="text-emerald-700">Available</span><span className="text-rose-700">Booked</span><span className="text-slate-500">{calendarRoom?.status}</span></div>
+      </section>
 
       {/* Room Level Availability Grid */}
       <div className="space-y-4">

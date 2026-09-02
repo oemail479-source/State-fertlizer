@@ -16,9 +16,9 @@ import { CircuitBungalows } from './pages/public/CircuitBungalows';
 import { Procurement } from './pages/public/Procurement';
 import { FertilizerPrices } from './pages/public/FertilizerPrices';
 import { InquiryPage } from './pages/public/Inquiry';
-import { 
-  AboutUs, TestingLab, RTISection, VacanciesPage, FAQPage, GalleryPage, SiteMapPage 
-} from './pages/public/OtherPages';
+import { TestingLab, RTISection } from './pages/public/OtherPages';
+import { AboutUs, VacanciesPage, FAQPage, GalleryPage, SiteMapPage } from './pages/public/PublicContent';
+import { ContactUs } from './pages/public/ContactUs';
 import { GlobalSearch } from './pages/public/GlobalSearch';
 import { AdminLogin } from './pages/public/AdminLogin';
 
@@ -31,6 +31,7 @@ import { ProcurementManagement } from './pages/admin/ProcurementManagement';
 import { InquiryManagement } from './pages/admin/InquiryManagement';
 import { IntegrationsManagement } from './pages/admin/IntegrationsManagement';
 import { ReportsAudit } from './pages/admin/ReportsAudit';
+import { GalleryManagement } from './pages/admin/GalleryManagement';
 
 const PublicLayout: React.FC = () => {
   return (
@@ -65,7 +66,7 @@ export const App: React.FC = () => {
                 <Route path="fertilizer-prices" element={<FertilizerPrices />} />
                 <Route path="testing-lab" element={<TestingLab />} />
                 <Route path="news" element={<FAQPage />} />
-                <Route path="contact" element={<InquiryPage />} />
+                <Route path="contact" element={<ContactUs />} />
                 <Route path="rti" element={<RTISection />} />
                 <Route path="vacancies" element={<VacanciesPage />} />
                 <Route path="faq" element={<FAQPage />} />
@@ -83,6 +84,7 @@ export const App: React.FC = () => {
                 <Route path="inquiries" element={<InquiryManagement />} />
                 <Route path="integrations" element={<IntegrationsManagement />} />
                 <Route path="reports" element={<ReportsAudit />} />
+                <Route path="gallery" element={<GalleryManagement />} />
                 <Route path="users" element={<ReportsAudit />} />
               </Route>
               <Route path="/admin/login" element={<AdminLogin />} />

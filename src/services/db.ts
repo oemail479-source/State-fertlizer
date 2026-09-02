@@ -2,7 +2,8 @@ import {
   User, Product, Bungalow, Order, PaymentTransaction, 
   BungalowBooking, Tender, TenderPurchaseRecord, Inquiry, 
   NewsItem, EventItem, FAQItem, VacancyItem, GalleryItem, 
-  AuditLog, ERPSyncLog 
+  AuditLog, ERPSyncLog, MinisterMessage, BoardMember, 
+  AnnualReport, VisitorAnalytics, JobApplication 
 } from '../types';
 
 const INITIAL_USERS: User[] = [
@@ -629,22 +630,6 @@ const INITIAL_NEWS: NewsItem[] = [
     publishedDate: '2026-08-26',
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
     isFeatured: true
-  },
-  {
-    id: 'news-02',
-    titleEn: 'Launch of Online Circuit Bungalow Reservation Portal & Digital Payment Gateway',
-    titleSi: 'ඔන්ලයින් මණ්ඩල බංගලා වෙන්කිරීමේ ද්වාරය සහ ඩිජිටල් ගෙවීම් පද්ධතිය එළිදැක්වීම',
-    titleTa: 'ஆன்லைன் சுற்றுப் பங்களா முன்பதிவு தளம் மற்றும் டிஜிட்டல் கட்டண முறை அறிமுகம்',
-    summaryEn: 'SFCL introduces direct online room-level booking and real-time bank payment gateways for Circuit Bungalows in Polonnaruwa and Nuwara Eliya.',
-    summarySi: 'පොළොන්නරුව සහ නුවරඑළිය මණ්ඩල බංගලා සඳහා ඔන්ලයින් කාමර වෙන්කිරීම් සහ රියල් ටයිම් බැංකු ගෙවීම් පද්ධති රාජ්‍ය පොහොර සමාගම මගින් හඳුන්වා දෙයි.',
-    summaryTa: 'பொலன்னறுவை மற்றும் நுவரெலியா பங்களாக்களுக்கான ஆன்லைன் முன்பதிவு வசதி தொடங்கப்பட்டுள்ளது.',
-    contentEn: 'As part of the digital transformation initiative, public and internal officers can now check live room availability and make online reservations via BOC and People\'s Bank payment gateways.',
-    contentSi: 'ඩිජිටල් පරිවර්තන මුලපිරීමේ පියවරක් ලෙස, මහජනතාවට සහ අභ්‍යන්තර නිලධාරීන්ට දැන් සජීවී කාමර ලබා ගැනීමේ හැකියාව පරීක්ෂා කර ඔන්ලයින් වෙන් කිරීම් කළ හැක.',
-    contentTa: 'டிஜிட்டல் மாற்றத்தின் ஒரு பகுதியாக, பொதுமக்கள் மற்றும் அதிகாரிகள் இப்போது நேரடியாக ஆன்லைனில் முன்பதிவு செய்யலாம்.',
-    category: 'Corporate',
-    publishedDate: '2026-08-20',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80',
-    isFeatured: true
   }
 ];
 
@@ -670,6 +655,55 @@ const INITIAL_FAQS: FAQItem[] = [
     category: 'Procurement'
   }
 ];
+
+const MINISTER_MESSAGE: MinisterMessage = {
+  ministerName: 'Hon. K. D. Lalkantha',
+  title: 'Minister of Agriculture, Livestock, Land and Irrigation',
+  ministry: 'Ministry of Agriculture, Livestock, Land and Irrigation',
+  photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80',
+  quote: 'Reliable inputs and transparent public services are the foundation of a resilient farming sector.',
+  messageBody: [
+    'Our farmers deserve dependable access to quality fertilizer, clear pricing, and responsive public institutions.',
+    'SFCL continues to strengthen national buffer stocks, laboratory assurance, and island-wide distribution while investing in practical digital services for citizens.'
+  ]
+};
+
+const BOARD_MEMBERS: BoardMember[] = [
+  { id: 'board-01', name: 'Dr. R. M. S. Bandara', designation: 'Chairman', department: 'Board of Directors', photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80', bio: 'Leads national fertilizer security, governance, and institutional performance.', qualifications: 'PhD in Agricultural Economics', type: 'board' },
+  { id: 'board-02', name: 'Ms. A. Perera', designation: 'Director General', department: 'Executive Management', photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80', bio: 'Oversees operations, distribution partnerships, and service delivery standards.', qualifications: 'MBA, Public Administration', type: 'executive' },
+  { id: 'board-03', name: 'Eng. S. Wijeratne', designation: 'Additional General Manager', department: 'Supply & Logistics', photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80', bio: 'Coordinates import planning, warehouse operations, and regional dispatch.', qualifications: 'BSc Engineering, CILT', type: 'executive' },
+  { id: 'board-04', name: 'Dr. N. Fernando', designation: 'Director, Quality Assurance', department: 'Central Testing Laboratory', photo: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80', bio: 'Maintains laboratory protocols and fertilizer quality certification.', qualifications: 'PhD in Soil Science', type: 'executive' }
+];
+
+const ANNUAL_REPORTS: AnnualReport[] = ['2024/25', '2023/24', '2022/23', '2021/22'].map((year, index) => ({
+  id: `report-${year.replace('/', '-')}`,
+  year,
+  title: `Annual Report ${year}`,
+  summary: `Audited performance, national supply activity, and corporate governance summary for financial year ${year}.`,
+  fileSize: `${2 + index}.4 MB`,
+  pdfUrl: `data:application/pdf,State%20Fertilizer%20Company%20Limited%20Annual%20Report%20${year}`,
+  highlights: ['Fertilizer distribution performance', 'Quality testing and compliance', 'Financial and governance highlights']
+}));
+
+const INITIAL_VACANCIES: VacancyItem[] = [
+  { id: 'vac-01', title: 'Senior Chemist - Quality Testing Laboratory', department: 'Central Testing Laboratory', closingDate: '2026-09-20', description: 'Lead fertilizer composition testing, reporting, and laboratory quality systems at Peliyagoda.', qualifications: ['Degree in Chemistry, Analytical Chemistry, or related discipline', 'Five years of laboratory experience', 'Membership of a recognized professional body'], pdfUrl: 'data:application/pdf,SFCL%20Gazette%20-%20Senior%20Chemist', status: 'Active' },
+  { id: 'vac-02', title: 'Regional Warehouse Officer', department: 'Supply & Logistics', closingDate: '2026-09-28', description: 'Coordinate stock records, dispatch schedules, and dealer service at a regional distribution hub.', qualifications: ['Diploma or degree in Logistics or Management', 'Three years of inventory experience', 'Valid driving licence preferred'], pdfUrl: 'data:application/pdf,SFCL%20Gazette%20-%20Warehouse%20Officer', status: 'Active' }
+];
+
+const INITIAL_GALLERY: GalleryItem[] = [
+  { id: 'gallery-01', title: 'Hunupitiya blending plant inspection', type: 'image', category: 'Factories & Warehouses', url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80', thumbnail: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=500&q=80', date: '2026-08-25' },
+  { id: 'gallery-02', title: 'Maha season paddy field visit', type: 'image', category: 'Field Inspections', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80', thumbnail: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=500&q=80', date: '2026-08-18' },
+  { id: 'gallery-03', title: 'National farmer service briefing', type: 'video', category: 'Events', url: 'https://www.youtube.com/embed/ScMzIvxBSi4', thumbnail: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80', date: '2026-08-12', videoDuration: '04:32' },
+  { id: 'gallery-04', title: 'Community soil health programme', type: 'image', category: 'CSR Initiatives', url: 'https://images.unsplash.com/photo-1592982537447-6f7a2c0a34c9?auto=format&fit=crop&w=1000&q=80', thumbnail: 'https://images.unsplash.com/photo-1592982537447-6f7a2c0a34c9?auto=format&fit=crop&w=500&q=80', date: '2026-07-30' }
+];
+
+const INITIAL_ANALYTICS: VisitorAnalytics = {
+  liveOnline: 18,
+  todayVisits: 1482,
+  totalVisitors: 482910,
+  pageViews: 1034812,
+  lastUpdated: new Date().toISOString()
+};
 
 // Persistent LocalStorage helper
 class DatabaseService {
@@ -1000,6 +1034,76 @@ class DatabaseService {
     };
     logs.unshift(newLog);
     this.setItem('audit_logs', logs.slice(0, 100)); // keep last 100
+  }
+
+  // Minister's Message & Board Members & Annual Reports
+  getMinisterMessage(): MinisterMessage {
+    return MINISTER_MESSAGE;
+  }
+
+  getBoardMembers(): BoardMember[] {
+    return BOARD_MEMBERS;
+  }
+
+  getAnnualReports(): AnnualReport[] {
+    return ANNUAL_REPORTS;
+  }
+
+  // Vacancies & Job Applications
+  getVacancies(): VacancyItem[] {
+    return this.getItem('vacancies', INITIAL_VACANCIES);
+  }
+
+  saveVacancy(vacancy: VacancyItem): void {
+    const vacancies = this.getVacancies();
+    const idx = vacancies.findIndex(v => v.id === vacancy.id);
+    if (idx >= 0) vacancies[idx] = vacancy;
+    else vacancies.push(vacancy);
+    this.setItem('vacancies', vacancies);
+    this.addAuditLog('Admin Officer', 'Content Editor', 'Save Vacancy', 'Careers', `Saved vacancy ${vacancy.title}`);
+  }
+
+  getJobApplications(): JobApplication[] {
+    return this.getItem('job_applications', []);
+  }
+
+  submitJobApplication(appData: Omit<JobApplication, 'id' | 'appliedAt' | 'status'>): JobApplication {
+    const apps = this.getJobApplications();
+    const newApp: JobApplication = {
+      ...appData,
+      id: `app-${Date.now()}`,
+      status: 'Received',
+      appliedAt: new Date().toLocaleString()
+    };
+    apps.unshift(newApp);
+    this.setItem('job_applications', apps);
+    this.addAuditLog(newApp.applicantName, 'Public Applicant', 'Submit Vacancy Application', 'Careers', `Applied for ${newApp.positionTitle}`);
+    return newApp;
+  }
+
+  // Gallery Items
+  getGalleryItems(): GalleryItem[] {
+    return this.getItem('gallery', INITIAL_GALLERY);
+  }
+
+  saveGalleryItem(item: GalleryItem): void {
+    const items = this.getGalleryItems();
+    const idx = items.findIndex(g => g.id === item.id);
+    if (idx >= 0) items[idx] = item;
+    else items.unshift(item);
+    this.setItem('gallery', items);
+    this.addAuditLog('Admin Officer', 'Content Editor', 'Save Gallery Item', 'Media Gallery', `Saved ${item.type} "${item.title}"`);
+  }
+
+  deleteGalleryItem(id: string): void {
+    const items = this.getGalleryItems().filter(g => g.id !== id);
+    this.setItem('gallery', items);
+    this.addAuditLog('Admin Officer', 'Content Editor', 'Delete Gallery Item', 'Media Gallery', `Deleted gallery item ${id}`);
+  }
+
+  // Visitor Analytics
+  getVisitorAnalytics(): VisitorAnalytics {
+    return INITIAL_ANALYTICS;
   }
 }
 

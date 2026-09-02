@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { 
-  LayoutDashboard, FileEdit, ShoppingCart, Calendar, FileText, 
+  LayoutDashboard, ShoppingCart, Calendar, FileText,
   HelpCircle, Users, BarChart3, Network,
-  LogOut, Shield, ChevronDown, Bell, Lock, Activity 
+  Shield, ChevronDown, Lock
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -36,6 +36,12 @@ export const AdminLayout: React.FC = () => {
         { label: 'ERP & Architecture', path: '/admin/integrations', icon: Network, module: 'erp' },
         { label: 'Reports & Audit Logs', path: '/admin/reports', icon: BarChart3, module: 'reports' },
         { label: 'User RBAC & Security', path: '/admin/users', icon: Users, module: 'users' },
+      ]
+    },
+    {
+      title: 'Content & Communications',
+      items: [
+        { label: 'Media Gallery', path: '/admin/gallery', icon: FileText, module: 'cms' },
       ]
     }
   ];
