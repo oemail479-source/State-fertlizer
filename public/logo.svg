@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#005596"/>
+  
+  <!-- Leaf Icon Top Right -->
+  <g transform="translate(225, 60) scale(0.9)">
+    <!-- Top-left segment -->
+    <path d="M 30,0 C 0,30 0,65 30,95 L 30,45 Z" fill="#78C237"/>
+    <!-- Top-right yellow segment -->
+    <path d="M 30,0 L 30,25 L 65,25 C 55,10 45,0 30,0 Z" fill="#F8B813"/>
+    <!-- Right middle green segment -->
+    <path d="M 30,25 L 65,25 C 68,45 55,65 30,65 Z" fill="#00A759"/>
+    <!-- Bottom green segment -->
+    <path d="M 30,65 C 55,65 65,80 65,95 C 45,95 30,85 30,65 Z" fill="#008852"/>
+    <!-- Vein lines -->
+    <path d="M 30,0 L 30,95 M 30,45 L 65,25 M 30,65 L 65,95" stroke="#005596" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text: STATE -->
+  <text x="35" y="130" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" letter-spacing="1">STATE</text>
+  
+  <!-- Text: FERTILIZER -->
+  <text x="35" y="175" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="44" fill="#FFFFFF" letter-spacing="1">FERTILIZER</text>
+  
+  <!-- Sinhala Tagline: රජයේ පොහොර-රටම අස්වද්දන්න -->
+  <text x="35" y="215" font-family="'Noto Sans Sinhala', 'Inter', sans-serif" font-weight="700" font-size="18" fill="#FFFFFF" letter-spacing="0.5">රජයේ පොහොර-රටම අස්වද්දන්න</text>
+</svg>

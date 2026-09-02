@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Coconut fertilizer product illustration</title>
+  <desc id="desc">A fertilizer bag beside a coconut palm and coconuts.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8f1f4"/>
+      <stop offset="1" stop-color="#f7edc4"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9912d"/>
+      <stop offset="1" stop-color="#99521e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <circle cx="650" cy="100" r="58" fill="#f4c95d" opacity=".8"/>
+  <path d="M0 406c180-62 328-7 468-43 128-33 236-10 332 42v95H0z" fill="#70ad5b"/>
+  <path d="M645 381c-13-117-6-193 20-258" fill="none" stroke="#78502d" stroke-width="18"/>
+  <g fill="#19734d" stroke="#105337" stroke-width="5"><path d="M659 132c-59-48-109-43-139-27 47 20 75 42 139 27z"/><path d="M670 128c37-65 80-76 119-68-32 39-62 62-119 68z"/><path d="M664 145c-64 1-98 30-112 61 51-10 79-25 112-61z"/><path d="M675 143c58 12 88 46 97 79-46-17-70-37-97-79z"/></g>
+  <g fill="#8a562a" stroke="#5a361e" stroke-width="4"><circle cx="638" cy="178" r="22"/><circle cx="673" cy="179" r="22"/></g>
+  <path d="M270 92h260l30 319H240z" fill="url(#bag)" stroke="#713b1a" stroke-width="8"/>
+  <path d="M280 105h240" stroke="#f2c55d" stroke-width="16"/>
+  <rect x="290" y="155" width="220" height="166" rx="10" fill="#fff2c9"/>
+  <text x="400" y="194" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#81501e">SFCL</text>
+  <text x="400" y="234" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="700" fill="#74451f">COCONUT</text>
+  <text x="400" y="268" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="700" fill="#74451f">BOOST NPK</text>
+  <text x="400" y="300" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#a56817">NPK 12-6-24 + MgO</text>
+</svg>

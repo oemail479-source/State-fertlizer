@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Vegetable fertilizer product illustration</title>
+  <desc id="desc">A green fertilizer bag beside fresh vegetables and leaves.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8f5e9"/>
+      <stop offset="1" stop-color="#b7dfc0"/>
+    </linearGradient>
+    <linearGradient id="bag" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16834b"/>
+      <stop offset="1" stop-color="#075b38"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="655" cy="105" r="88" fill="#f7c948" opacity=".75"/>
+  <path d="M0 414c150-72 260-12 389-44 145-36 261-14 411 44v86H0z" fill="#78b887"/>
+  <path d="M270 92h260l30 319H240z" fill="url(#bag)" stroke="#06482d" stroke-width="8"/>
+  <path d="M280 105h240" stroke="#e7c65c" stroke-width="16"/>
+  <rect x="290" y="155" width="220" height="166" rx="10" fill="#f6f1d0"/>
+  <text x="400" y="194" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#0b5d38">SFCL</text>
+  <text x="400" y="234" text-anchor="middle" font-family="sans-serif" font-size="27" font-weight="700" fill="#16452e">VEGETABLE</text>
+  <text x="400" y="268" text-anchor="middle" font-family="sans-serif" font-size="25" font-weight="700" fill="#16452e">GROWTH MIX</text>
+  <text x="400" y="300" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8a6810">NPK 12-18-20</text>
+  <g fill="#e94f37" stroke="#a93226" stroke-width="4"><circle cx="130" cy="370" r="42"/><circle cx="190" cy="397" r="38"/></g>
+  <g fill="#f2a93b" stroke="#c67518" stroke-width="4"><path d="M82 445c-22-74 18-107 43-122 18 58 21 89-43 122z"/><path d="M154 459c-10-78 31-103 61-112 5 60-11 91-61 112z"/></g>
+  <g fill="#287d45"><path d="M85 350c-25-62 9-93 40-108 19 49 5 86-40 108z"/><path d="M128 344c7-58 42-70 71-72-2 47-25 69-71 72z"/></g>
+</svg>
