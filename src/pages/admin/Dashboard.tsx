@@ -69,7 +69,7 @@ export const Dashboard: React.FC = () => {
             <DollarSign className="w-5 h-5 text-emerald-600" />
           </div>
           <p className="text-xl font-extrabold font-mono text-slate-900">
-            LKR {(totalSalesRevenue / 1000).toFixed(0)}k
+            LKR {totalSalesRevenue.toLocaleString()}
           </p>
           <span className="text-[10px] text-emerald-600 font-bold flex items-center">
             <ArrowUpRight className="w-3 h-3" /> +18.4% this month

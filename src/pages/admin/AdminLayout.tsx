@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, FileEdit, ShoppingCart, Calendar, FileText, 
-  HelpCircle, Users, BarChart3, Network, ShieldCheck, Settings, 
+  HelpCircle, Users, BarChart3, Network,
   LogOut, Shield, ChevronDown, Bell, Lock, Activity 
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -124,6 +124,11 @@ export const AdminLayout: React.FC = () => {
               <h4 className="font-bold text-xs text-white truncate">{user ? user.name : 'Guest User'}</h4>
               <p className="text-[10px] text-gov-gold truncate">{role}</p>
             </div>
+          </div>
+
+          <div className="px-3 text-[11px] leading-relaxed text-slate-400">
+            <p className="font-bold text-slate-300">Operations workspace</p>
+            <p>Orders, reservations, tenders, and public service requests.</p>
           </div>
 
           {/* Navigation Menu Groups */}
